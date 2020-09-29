@@ -1,0 +1,169 @@
+%% example.tex
+%% Copyright 2020 A. Pezzoni
+%
+% This work may be distributed and/or modified under the conditions of the LaTeX
+% Project Public License, either version 1.3 of this license or (at your option)
+% any later version, with the exception that distribution of Derived Work is not
+% subject to the requirements of section 6.2.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX version
+% 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained`.
+%
+% The Current Maintainer of this work is A. Pezzoni.
+
+% This work consists of the files yorkthesis.cls, example.tex and README.md.
+% Change `draft` to `final` for the published version.
+\documentclass[draft]{yorkthesis}
+
+%%% Font
+\usepackage[utf8]{inputenx}  % Allow unicode input
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}         % A nice scalable font based on Computer Modern.
+                             % For more options, see e.g.
+                             % https://tex.stackexchange.com/a/59706/27664
+
+%%% Maths
+% Uncomment as needed
+
+\usepackage{amsmath}    % Basic math environments
+% \usepackage{amsthm}     % Theorem environments
+% \usepackage{amssymb}    % Many extra symbols, plus \mathbb and \mathfrak
+% \usepackage{mathtools}  % Extensions to amsmath
+
+% Example theorem environments
+% NOTE: It is advisable to use the same counter for all theorem environments.
+
+% \theoremstyle{plain}
+% \newtheorem{theorem}{Theorem}[section]
+% \newtheorem{corollary}[theorem]{Corollary}
+% \newtheorem{proposition}[theorem]{Proposition}
+% \newtheorem{lemma}[theorem]{Lemma}
+
+%%% Bibliography setup
+\usepackage[eprint,          % Include information for pre-prints.
+            doi=false,
+            url=false,
+            maxnames=10,     % Truncate lists of more than 10 authors.
+            giveninits=true, % Only output the initials of an author's given
+                             % names.
+            safeinputenc     % Fix for biber not playing nice with breve accents
+                             % (i.e. \u{}), see
+                             % https://tex.stackexchange.com/a/170586/27664.
+           ]{biblatex}
+\addbibresource{bibliography.bib}
+
+%%% Misc
+\usepackage[final]{hyperref}
+
+\ifdraftdoc
+  %% Extra options for draft versions only
+  % NOTE: `draftwatermark` needs a scalable font.
+  \usepackage[firstpageonly]{draftwatermark}  % Watermark on the front page
+\else
+  %% Extra options for final versions only
+  \usepackage{microtype}                      % Enable microtypographical adjustments
+\fi
+
+\usepackage[math]{blindtext}  % Quickly fill the example document with some text
+% TODO: Delete the blindtext macros from your document.
+
+% Put custom macros in `mymacros.sty` to avoid cluttering the preamble.
+\usepackage{mymacros}
+
+%%% Styling options
+% See the manual of the `memoir` class for more predefined styles:
+% - Appendix B for chapter styles;
+% - Section 6.9 for lower level heading styles.
+% To learn how to define your own, see Chapter 6.
+
+\headstyles{bringhurst}
+\chapterstyle{dash}
+
+% Uncomment one of the options below to reduce the spacing between list items.
+% See Section 8.6 of the manual of the `memoir` class.
+% \firmlists   % Slightly less space than the default
+% \tightlists  % No extra space
+
+%%% Title info
+
+\title{Some very interesting problems in the Theory of Foo}
+\author{Joe Math}
+\department{Mathematics}
+\qualification{PhD}
+% \submitdate{September 2020}  % FORMAT: [month] [year].
+%                              % Defaults to current month if unset.
+
+\begin{document}
+% FORMAT: All pages should be numbered continuously.
+\frontmatter*
+
+\makethesistitle
+
+\chapter{Abstract}
+
+% TODO: Write the abstract.
+\blindtext
+
+\clearpage
+\tableofcontents
+
+% \clearpage
+% \listoftables
+
+% \clearpage
+% \listoffigures
+
+% FORMAT: Any material that cannot be included in the thesis and will accompany
+%         it on a separate CD should be listed here.
+
+\chapter{Acknowledgments}
+
+% TODO: Write the acknowledgements, if any. Otherwise remove the chapter.
+\blindtext
+
+\chapter{Author's declaration}
+
+I declare that the work presented in this thesis, except where otherwise stated,
+is based on my own research carried out at the University of York and has not
+been submitted previously for any degree at this or any other university.
+Sources are acknowledged by explicit references.
+
+% WARNING: Any material included in the thesis that has been presented before
+%          should be mentioned here, with full references for papers published
+%          or under review.
+
+\mainmatter*
+
+\chapter{Introduction}%
+\label{cha:introduction}
+
+We introduce the Theory of Foo, following \cite{Lang2002}.
+
+% TODO: Delete the blindtext commands.
+\blindmathpaper
+\blinddocument
+
+
+% NOTE: Appendices go below this point
+\appendix
+
+\chapter{Some extra stuff}
+
+\Blindtext
+
+\backmatter
+
+% FORMAT: Glossary and/or list of abbreviations goes here.
+
+% FORMAT: According to the guidelines, a list of _references_ includes only the
+%         bibliographical entries of the items actually cited in the text,
+%         while a _bibliography_ should include all the items consulted in
+%         writing the thesis.
+\printbibliography[heading=bibintoc, title=References]
+
+% FORMAT: The index, if there is one, goes here.
+
+\end{document}

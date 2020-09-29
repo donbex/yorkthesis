@@ -1,0 +1,39 @@
+## vim swap files
+*.swp
+
+## core latex/pdflatex auxiliary files
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+
+## latex compilation products
+#  Change to 'main.pdf' if images are present.
+*.pdf
+
+## bibliography auxiliary files
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+
+## fixme auxiliary files
+*.lox
+*.tdo
+
+## build tool auxiliary files
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
