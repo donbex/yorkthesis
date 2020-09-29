@@ -18,6 +18,7 @@
 ## latex compilation products
 #  Change to 'main.pdf' if images are present.
 *.pdf
+!example.pdf
 
 ## bibliography auxiliary files
 *.bbl
